@@ -228,6 +228,57 @@
     .project-card:nth-child(3) { animation: fadeSlideUp 0.6s 0.24s both; }
     .project-card:nth-child(4) { animation: fadeSlideUp 0.6s 0.36s both; }
 
+    /* Behance / Design section */
+    .behance-section { padding-bottom: 64px; }
+    .behance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 20px;
+    }
+    .behance-card {
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-decoration: none;
+      display: block;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .behance-card:hover {
+      transform: translateY(-4px);
+      border-color: #1769FF40;
+      box-shadow: 0 12px 32px rgba(23, 105, 255, 0.08);
+    }
+    .behance-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .behance-info { padding: 20px; }
+    .behance-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: #F1F1F3; margin-bottom: 8px;
+    }
+    .behance-meta {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .behance-stat {
+      font-size: 12px; font-family: 'JetBrains Mono', monospace;
+      color: #6B7280;
+    }
+    .behance-link-tag {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace;
+      color: #1769FF; margin-top: 10px; display: inline-block;
+    }
+    .behance-card:nth-child(1) { animation: fadeSlideUp 0.6s 0.00s both; }
+    .behance-card:nth-child(2) { animation: fadeSlideUp 0.6s 0.12s both; }
+    .behance-card:nth-child(3) { animation: fadeSlideUp 0.6s 0.24s both; }
+    .behance-card:nth-child(4) { animation: fadeSlideUp 0.6s 0.36s both; }
+    .behance-card:nth-child(5) { animation: fadeSlideUp 0.6s 0.48s both; }
+    .behance-card:nth-child(6) { animation: fadeSlideUp 0.6s 0.60s both; }
+
     /* Skills */
     .skills-section { padding-bottom: 80px; }
     .skills-grid {
@@ -408,6 +459,87 @@
             <span class="tech-tag">ACF</span>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- Design & Creative Work (Behance) -->
+    <section class="behance-section">
+      <div class="section-header">
+        <span class="section-label">🎨 Design & Creative Work</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="behance-grid">
+
+        <a href="https://www.behance.net/gallery/236612177/Empower-Africa-Website" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/8683e4236612177.Y3JvcCwxMDUxLDgyMiwxNzEsNw.jpg" alt="Empower Africa Website" />
+          <div class="behance-info">
+            <h3 class="behance-title">Empower Africa Website</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">88 views</span>
+              <span class="behance-stat">1 appreciation</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/236610785/Gibro-Website-UI-Design" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/250c21236610785.Y3JvcCwxNjY5LDEzMDUsMCww.jpg" alt="Gibro Website UI Design" />
+          <div class="behance-info">
+            <h3 class="behance-title">Gibro Website UI Design</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">77 views</span>
+              <span class="behance-stat">1 appreciation</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/213760969/Empower-Africa-Platform-Walkthrough-Tutorial" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/7fab06213760969.Y3JvcCwxMTkwLDkzMSwyMzUsMA.png" alt="Empower Africa Platform Walkthrough Tutorial" />
+          <div class="behance-info">
+            <h3 class="behance-title">Empower Africa Platform Walkthrough</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">17 views</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/102247123/London-Consult-Branding" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/cb6a2d102247123.Y3JvcCw4NDIsNjU4LDAsMzE.jpg" alt="London Consult Branding" />
+          <div class="behance-info">
+            <h3 class="behance-title">London Consult Branding</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">837 views</span>
+              <span class="behance-stat">13 appreciations</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/193873495/Konzah-Green-Branding" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/c364e9193873495.Y3JvcCw4NTAsNjY0LDAsMTY.jpg" alt="Konzah Green Branding" />
+          <div class="behance-info">
+            <h3 class="behance-title">Konzah Green Branding</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">19 views</span>
+              <span class="behance-stat">2 appreciations</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/203680621/Urban-Savannah" target="_blank" class="behance-card">
+          <img class="behance-thumb" src="https://mir-s3-cdn-cf.behance.net/projects/404/24f5f2203680621.Y3JvcCwxNzg1LDEzOTYsMCw1NjU.png" alt="Urban Savannah" />
+          <div class="behance-info">
+            <h3 class="behance-title">Urban Savannah</h3>
+            <div class="behance-meta">
+              <span class="behance-stat">15 views</span>
+            </div>
+            <span class="behance-link-tag">↗ View on Behance</span>
+          </div>
+        </a>
 
       </div>
     </section>
