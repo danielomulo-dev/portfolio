@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Daniel Omulo — Full-Stack Developer & Creative Consultant · Nairobi</title>
+<meta name="description" content="Full-stack developer and creative consultant in Nairobi. I build WordPress plugins, AI tools, and brand systems for clients worldwide — remote-ready, results-focused." />
+<meta property="og:title" content="Daniel Omulo — Full-Stack Developer & Creative Consultant" />
+<meta property="og:description" content="Full-stack developer and creative consultant in Nairobi. I build WordPress plugins, AI tools, and brand systems for clients worldwide — remote-ready, results-focused." />
+<meta property="og:type" content="website" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#1C1C22;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#E8552D;color:#fff;}
+  a:focus-visible,button:focus-visible{outline:2px solid #E8552D;outline-offset:3px;border-radius:6px;}
+  @media (max-width:860px){
+    .nav-links{display:none !important;}
+    .nav-cta{display:none !important;}
+    .nav-burger{display:flex !important;}
+  }
+  @media (min-width:861px){
+    .nav-burger{display:none !important;}
+    .mobile-panel{display:none !important;}
+  }
+</style>
+</helmet>
+<div id="home" style="--accent:{{ accent }};--accent-soft:{{ accentSoft }};background:#1C1C22;color:#F4F1EC;font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;">
+
+  <header style="position:sticky;top:0;z-index:100;background:rgba(20,20,24,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <nav style="max-width:1200px;margin:0 auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#home" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#F4F1EC;">
+        <span style="width:38px;height:38px;border-radius:10px;background:var(--accent,#E8552D);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:0.04em;">DO</span>
+        <span style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;">Daniel Omulo</span>
+      </a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:30px;font-family:'Poppins',sans-serif;font-weight:500;font-size:14.5px;">
+        <a href="#home" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Home</a>
+        <a href="#about" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">About</a>
+        <a href="#stack" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Stack</a>
+        <a href="#work" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Work</a>
+        <a href="#case-studies" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Case Studies</a>
+        <a href="#contact" style="text-decoration:none;color:#C8C8CE;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta" style="border:1px solid var(--accent,#E8552D);color:var(--accent,#E8552D);padding:11px 20px;border-radius:9px;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;white-space:nowrap;transition:background .25s,color .25s;" style-hover="background:var(--accent,#E8552D);color:#fff">Let's Work Together →</a>
+      <button class="nav-burger" onClick="{{ toggleMenu }}" aria-label="Toggle menu" style="display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;">
+        <span style="width:24px;height:2px;background:#F4F1EC;display:block;border-radius:2px;"></span>
+        <span style="width:24px;height:2px;background:#F4F1EC;display:block;border-radius:2px;"></span>
+        <span style="width:24px;height:2px;background:#F4F1EC;display:block;border-radius:2px;"></span>
+      </button>
+    </nav>
+    <div class="mobile-panel" style="display:{{ menuDisplay }};flex-direction:column;padding:8px 32px 22px;gap:4px;border-top:1px solid rgba(255,255,255,0.08);font-family:'Poppins',sans-serif;font-weight:500;font-size:16px;">
+      <a href="#home" onClick="{{ closeMenu }}" style="text-decoration:none;color:#C8C8CE;padding:13px 0;display:block;">Home</a>
+      <a href="#about" onClick="{{ closeMenu }}" style="text-decoration:none;color:#C8C8CE;padding:13px 0;display:block;">About</a>
+      <a href="#stack" onClick="{{ closeMenu }}" style="text-decoration:none;color:#C8C8CE;padding:13px 0;display:block;">Stack</a>
+      <a href="#work" onClick="{{ closeMenu }}" style="text-decoration:none;color:#C8C8CE;padding:13px 0;display:block;">Work</a>
+      <a href="#case-studies" onClick="{{ closeMenu }}" style="text-decoration:none;color:#C8C8CE;padding:13px 0;display:block;">Case Studies</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="text-decoration:none;color:var(--accent,#E8552D);padding:13px 0;display:block;font-weight:600;">Let's Work Together →</a>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,104px) 32px clamp(64px,9vw,112px);">
+    <div aria-hidden="true" style="position:absolute;top:-10px;left:8px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(72px,15vw,210px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(232,85,45,0.11);letter-spacing:-0.02em;pointer-events:none;z-index:0;">CREATIVE</div>
+    <div aria-hidden="true" style="position:absolute;bottom:6px;right:0;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(60px,13vw,180px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(232,85,45,0.08);letter-spacing:-0.02em;pointer-events:none;z-index:0;">DEVELOPER</div>
+
+    <div style="position:relative;z-index:2;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(40px,5vw,72px);align-items:center;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:26px;display:flex;align-items:center;gap:12px;"><span style="width:26px;height:1px;background:var(--accent,#E8552D);display:inline-block;"></span># Full-Stack Developer &amp; Creative Consultant</div>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(34px,6.4vw,74px);line-height:1.04;letter-spacing:-0.025em;margin:0 0 24px;overflow-wrap:break-word;">I build <span style="color:var(--accent,#E8552D);">products</span> and the <span style="color:var(--accent,#E8552D);">brands</span> around them.</h1>
+        <p style="font-size:17px;line-height:1.65;color:#8A8D93;max-width:540px;margin:0 0 32px;">Full-stack developer and creative consultant in Nairobi — shipping WordPress plugins, AI tools, and brand systems for clients worldwide. Remote-ready, EAT (UTC+3).</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px;">
+          <a href="#contact" style="background:var(--accent,#E8552D);color:#fff;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;padding:15px 28px;border-radius:10px;transition:background .25s,transform .2s;" style-hover="background:#C9512E;transform:translateY(-2px)">Hire Me →</a>
+          <a href="#work" style="border:1px solid rgba(255,255,255,0.18);color:#F4F1EC;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;padding:15px 28px;border-radius:10px;transition:border-color .25s,background .25s;" style-hover="border-color:var(--accent,#E8552D);background:rgba(232,85,45,0.08)">View Work</a>
+        </div>
+        <div style="display:inline-flex;flex-wrap:wrap;align-items:stretch;border:1px solid rgba(255,255,255,0.12);border-radius:12px;overflow:hidden;margin-bottom:24px;font-family:'JetBrains Mono',monospace;font-size:12.5px;">
+          <span style="display:flex;align-items:center;gap:8px;padding:12px 16px;color:#F4F1EC;"><span style="color:var(--accent,#E8552D);font-weight:500;">&lt;/&gt;</span> Ships production code</span>
+          <span style="display:flex;align-items:center;padding:12px 13px;background:var(--accent,#E8552D);color:#fff;font-weight:600;font-size:14px;">+</span>
+          <span style="display:flex;align-items:center;gap:8px;padding:12px 16px;color:#F4F1EC;background:rgba(232,85,45,0.09);"><span style="color:var(--accent,#E8552D);font-weight:500;">✦</span> Builds the brand around it</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#8A8D93;">
+          <span style="display:inline-flex;align-items:center;gap:7px;"><span style="width:7px;height:7px;border-radius:50%;background:#3FB57A;display:inline-block;"></span>Available for freelance</span>
+          <span style="color:#4A4A52;">·</span>
+          <span>Open to full-time</span>
+          <span style="color:#4A4A52;">·</span>
+          <span>Works remotely worldwide</span>
+        </div>
+      </div>
+
+      <div data-reveal="" style="transition:opacity .8s cubic-bezier(.2,.7,.2,1) .12s,transform .8s cubic-bezier(.2,.7,.2,1) .12s;display:flex;gap:18px;justify-content:center;align-items:stretch;">
+        <div style="position:relative;flex:1;max-width:430px;">
+          <div aria-hidden="true" style="position:absolute;inset:18px -14px -18px 14px;border-radius:20px;background:radial-gradient(120% 120% at 70% 30%,rgba(232,85,45,0.45),rgba(232,85,45,0) 70%);filter:blur(10px);z-index:0;"></div>
+          <div aria-hidden="true" style="position:absolute;right:-12px;bottom:-12px;width:120px;height:120px;border-radius:18px;background:var(--accent-soft,#C9512E);z-index:0;"></div>
+          <img src="assets/portrait.jpg" alt="Portrait of Daniel Omulo, full-stack developer and creative consultant" style="position:relative;z-index:1;width:100%;height:clamp(420px,58vh,560px);object-fit:cover;object-position:center top;border-radius:18px;border:1px solid rgba(255,255,255,0.08);display:block;" />
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;flex:none;">
+          <a href="https://github.com/danielomulo-dev" target="_blank" rel="noopener" aria-label="GitHub" style="width:44px;height:44px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;text-decoration:none;color:#C8C8CE;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;transition:.25s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Gh</a>
+          <a href="https://www.linkedin.com/in/daniel-omulo-43b95679/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:44px;height:44px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;text-decoration:none;color:#C8C8CE;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;transition:.25s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">in</a>
+          <a href="https://www.behance.net/danielomulo" target="_blank" rel="noopener" aria-label="Behance" style="width:44px;height:44px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;text-decoration:none;color:#C8C8CE;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;transition:.25s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Be</a>
+          <a href="mailto:danielomulo@gmail.com" aria-label="Email" style="width:44px;height:44px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;text-decoration:none;color:#C8C8CE;font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:500;transition:.25s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">@</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" style="position:relative;border-top:1px solid rgba(255,255,255,0.08);">
+    <div aria-hidden="true" style="position:absolute;top:40px;right:-10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(64px,12vw,160px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(232,85,45,0.06);pointer-events:none;z-index:0;">ABOUT</div>
+    <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,120px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:36px;"># About</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,64px);align-items:center;">
+        <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);">
+          <div style="background:#EFEAE0;padding:14px;border-radius:16px;max-width:380px;">
+            <img src="assets/portrait.jpg" alt="Daniel Omulo, Nairobi-based developer and creative consultant" style="width:100%;height:clamp(360px,46vh,460px);object-fit:cover;object-position:center top;border-radius:8px;display:block;filter:grayscale(0.1);" />
+          </div>
+        </div>
+        <div data-reveal="" style="transition:opacity .8s cubic-bezier(.2,.7,.2,1) .1s,transform .8s cubic-bezier(.2,.7,.2,1) .1s;">
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-0.02em;margin:0 0 24px;">Designer by training.<br />Developer by craft.</h2>
+          <p style="font-size:17px;line-height:1.68;color:#C0C2C7;margin:0 0 20px;">I'm Daniel — I sit in the rare overlap between engineering and design. I write the code that ships and shape the brand that sells it. That means a client can hand me a raw idea and get back both a working product and the story, identity, and marketing that make people want it.</p>
+          <p style="font-size:17px;line-height:1.68;color:#8A8D93;margin:0;">Based in Nairobi, working with teams and founders across Africa, Europe, and the US — fully remote, fully accountable. Currently engineering the plugin platform at <span style="color:#F4F1EC;font-weight:500;">Empower Africa</span>.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1) .1s,transform .7s cubic-bezier(.2,.7,.2,1) .1s;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:clamp(48px,6vw,72px);padding-top:clamp(40px,5vw,56px);border-top:1px solid rgba(255,255,255,0.08);">
+        <div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(38px,5vw,52px);color:var(--accent,#E8552D);line-height:1;letter-spacing:-0.02em;">20+</div>
+          <div style="font-family:'Inter',sans-serif;font-size:14px;color:#8A8D93;margin-top:8px;">Plugins shipped</div>
+        </div>
+        <div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(38px,5vw,52px);color:var(--accent,#E8552D);line-height:1;letter-spacing:-0.02em;">5+</div>
+          <div style="font-family:'Inter',sans-serif;font-size:14px;color:#8A8D93;margin-top:8px;">Brands built</div>
+        </div>
+        <div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(38px,5vw,52px);color:var(--accent,#E8552D);line-height:1;letter-spacing:-0.02em;">3</div>
+          <div style="font-family:'Inter',sans-serif;font-size:14px;color:#8A8D93;margin-top:8px;">Continents served</div>
+        </div>
+        <div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(38px,5vw,52px);color:var(--accent,#E8552D);line-height:1;letter-spacing:-0.02em;">100%</div>
+          <div style="font-family:'Inter',sans-serif;font-size:14px;color:#8A8D93;margin-top:8px;">Remote delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS & STACK ===================== -->
+  <section id="stack" style="background:#141418;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,120px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:14px;"># Skills &amp; Stack</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-0.02em;margin:0 0 8px;">Two disciplines. One person.</h2>
+        <p style="font-size:16.5px;line-height:1.65;color:#8A8D93;max-width:560px;margin:0 0 48px;">Code on one side, craft on the other — the rare combination that lets one hire cover both.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+        <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:clamp(28px,3.4vw,40px);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#8A8D93;text-transform:uppercase;margin-bottom:6px;">// Side A</div>
+          <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:24px;margin:0 0 22px;letter-spacing:-0.01em;">Engineering</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">JavaScript</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">TypeScript</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">React</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Next.js</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Vite</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Node.js</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">PHP</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">WordPress Plugin Dev</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">REST APIs</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">MySQL/MariaDB</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Python</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Git</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">AI/LLM (OpenAI · Anthropic · Gemini)</span>
+          </div>
+        </div>
+        <div data-reveal="" style="transition:opacity .8s cubic-bezier(.2,.7,.2,1) .1s,transform .8s cubic-bezier(.2,.7,.2,1) .1s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:clamp(28px,3.4vw,40px);">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:6px;">// Side B</div>
+          <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:24px;margin:0 0 22px;letter-spacing:-0.01em;">Creative &amp; Consulting</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Brand Identity</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Packaging Design</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Marketing Strategy</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Art Direction</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Social Campaign Design</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Copywriting</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Paid Ads (Meta &amp; Google)</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Figma</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Photopea / GIMP</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#D6D6DB;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;transition:.22s;" style-hover="border-color:var(--accent,#E8552D);color:var(--accent,#E8552D)">Video &amp; Motion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <section id="work" style="border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,120px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);max-width:640px;margin-bottom:52px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:14px;"># Products I've Built</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-0.02em;margin:0 0 14px;">Owned end to end.</h2>
+        <p style="font-size:17px;line-height:1.65;color:#8A8D93;margin:0;">Tools and platforms I own end to end — from architecture to the last line of CSS.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+
+        <article data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);">
+          <div style="height:200px;overflow:hidden;background:#141418;border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);position:relative;">
+            <img src="assets/cadence.png" alt="Cadence campaign content studio interface showing a content calendar" style="width:100%;height:100%;object-fit:cover;object-position:left top;display:block;" />
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:20px;margin:0 0 10px;">Cadence — Campaign Content Studio</h3>
+            <p style="font-size:16px;line-height:1.62;color:#9DA0A6;margin:0 0 18px;flex:1;">A React + Vite web app that turns a single client brief into a full month of platform-tailored social content — themes, pillars, and a ready-to-publish calendar. Multi-engine AI (OpenAI, Gemini, Claude), with a saveable campaign library.</p>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8D93;margin-bottom:18px;letter-spacing:0.02em;">React · Vite · Multi-LLM · GitHub Pages</div>
+            <a href="https://danielomulo-dev.github.io/cadence/" target="_blank" rel="noopener" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--accent,#E8552D);text-decoration:none;" style-hover="opacity:0.75">Live demo →</a>
+          </div>
+        </article>
+
+        <article data-reveal="" style="transition:opacity .8s cubic-bezier(.2,.7,.2,1) .1s,transform .8s cubic-bezier(.2,.7,.2,1) .1s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);">
+          <div style="height:200px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6E7077;letter-spacing:0.05em;">wordpress-plugin-suite.png</span>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:20px;margin:0 0 10px;">Empower Africa Plugin Suite</h3>
+            <p style="font-size:16px;line-height:1.62;color:#9DA0A6;margin:0 0 18px;flex:1;">A first-party WordPress plugin platform powering a B2B trade and procurement network — membership conversion, tender and investment matching, AI assistants, and business dashboards. 20+ plugins, built to never touch third-party cores.</p>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8D93;margin-bottom:18px;letter-spacing:0.02em;">PHP · WordPress · REST · AI</div>
+            <a href="#case-studies" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--accent,#E8552D);text-decoration:none;" style-hover="opacity:0.75">Read case study →</a>
+          </div>
+        </article>
+
+        <article data-reveal="" style="transition:opacity .9s cubic-bezier(.2,.7,.2,1) .2s,transform .9s cubic-bezier(.2,.7,.2,1) .2s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);">
+          <div style="height:200px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);border-bottom:1px solid rgba(255,255,255,0.08);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6E7077;letter-spacing:0.05em;">emily-ai-assistant.png</span>
+          </div>
+          <div style="padding:28px;display:flex;flex-direction:column;flex:1;">
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:20px;margin:0 0 10px;">Emily AI</h3>
+            <p style="font-size:16px;line-height:1.62;color:#9DA0A6;margin:0 0 18px;flex:1;">A personal AI assistant Discord bot with portfolio tracking, document ingestion, voice transcription, and a companion journal PWA.</p>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8D93;margin-bottom:18px;letter-spacing:0.02em;">Python · OpenAI · MongoDB · PWA</div>
+            <a href="https://github.com/danielomulo-dev" target="_blank" rel="noopener" style="font-family:'Poppins',sans-serif;font-weight:500;font-size:14px;color:var(--accent,#E8552D);text-decoration:none;" style-hover="opacity:0.75">About →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CLIENTS ===================== -->
+  <section style="background:#141418;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,96px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);margin-bottom:44px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:14px;"># Clients I've Served</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,38px);line-height:1.12;letter-spacing:-0.02em;margin:0;max-width:620px;">Brands and platforms that trusted both halves of the work.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;">
+        <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .25s;" style-hover="border-color:rgba(232,85,45,0.4)">
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin-bottom:8px;">Empower Africa</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8D93;line-height:1.5;">Platform engineering &amp; growth</div>
+        </div>
+        <div data-reveal="" style="transition:opacity .75s cubic-bezier(.2,.7,.2,1) .06s,transform .75s cubic-bezier(.2,.7,.2,1) .06s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .25s;" style-hover="border-color:rgba(232,85,45,0.4)">
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin-bottom:8px;">Tabasamu Sips</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8D93;line-height:1.5;">Brand identity, packaging &amp; social</div>
+        </div>
+        <div data-reveal="" style="transition:opacity .8s cubic-bezier(.2,.7,.2,1) .12s,transform .8s cubic-bezier(.2,.7,.2,1) .12s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .25s;" style-hover="border-color:rgba(232,85,45,0.4)">
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin-bottom:8px;">Peace Diamond Initiative</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8D93;line-height:1.5;">Website &amp; content design</div>
+        </div>
+        <div data-reveal="" style="transition:opacity .85s cubic-bezier(.2,.7,.2,1) .18s,transform .85s cubic-bezier(.2,.7,.2,1) .18s;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:26px;transition:border-color .25s;" style-hover="border-color:rgba(232,85,45,0.4)">
+          <div style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin-bottom:8px;">Business Center, Freetown</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8D93;line-height:1.5;">Paid ad campaigns</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASE STUDIES ===================== -->
+  <section id="case-studies" style="border-top:1px solid rgba(255,255,255,0.08);position:relative;">
+    <div aria-hidden="true" style="position:absolute;top:64px;left:-10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(64px,12vw,160px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(232,85,45,0.05);pointer-events:none;z-index:0;">WORKS</div>
+    <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,120px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);max-width:640px;margin-bottom:52px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:14px;"># Case Studies</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-0.02em;margin:0;">Problem, build, result.</h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:28px;">
+
+        <!-- CS1 Tabasamu -->
+        <article data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));box-shadow:0 24px 50px -32px rgba(0,0,0,0.85);">
+          <div style="min-height:300px;background:#141418;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <img src="assets/tabasamu-1.png" alt="Tabasamu Sips pineapple ginger kombucha bottle styled with fresh fruit" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="assets/tabasamu-3.png" alt="Tabasamu Sips pineapple kombucha bottle in warm sunlight" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="assets/tabasamu-2.png" alt="Tabasamu Sips passion fruit kombucha bottle on a wooden stool" style="width:100%;height:100%;object-fit:cover;display:block;" />
+            <img src="assets/tabasamu-5.jpg" alt="Tabasamu Sips beetroot kombucha bottle with fresh beetroot" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          </div>
+          <div style="padding:clamp(28px,3.4vw,44px);">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.14em;color:#8A8D93;text-transform:uppercase;margin-bottom:6px;"># Case Study 01 · Creative</div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;margin:0 0 24px;letter-spacing:-0.01em;">Tabasamu Sips</h3>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The problem</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A new premium Kenyan rooibos kombucha had a great product but no identity, no packaging system, and no way to look premium on a shelf or a feed.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">What I built</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A full brand system — logo, a flavour colour-coding system, typography, packaging mockups for every variant, lifestyle marketing imagery, and a social template kit — built on an "urban artisan" brand strategy.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The result</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A cohesive, premium brand the founder can extend across products, retail, and campaigns without guessing — one visual language end to end.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CS2 Empower Africa -->
+        <article data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));box-shadow:0 24px 50px -32px rgba(0,0,0,0.85);">
+          <div style="padding:clamp(28px,3.4vw,44px);order:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.14em;color:#8A8D93;text-transform:uppercase;margin-bottom:6px;"># Case Study 02 · Technical</div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;margin:0 0 24px;letter-spacing:-0.01em;">Empower Africa Plugin Platform</h3>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The problem</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A growing B2B trade platform on WordPress needed membership conversion, tender and investment matching, and AI assistance — without ever modifying BuddyBoss, Directorist, or MemberPress cores, and with no build step allowed on the host.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">What I built</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A suite of 20+ first-party plugins: a conversion-focused membership experience with plan cards and profile gating, directory-aware AI assistants, automatic dashboard integration via neutral action hooks, and a tiered investment-filter engine — all output escaped, all access fail-closed.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The result</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A maintainable, upgrade-safe platform where every feature ships as a clean ZIP, passes lint, and survives third-party updates untouched.</p>
+              </div>
+            </div>
+          </div>
+          <div style="order:2;min-height:300px;background:#141418;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px;background-image:repeating-linear-gradient(135deg,#16161B,#16161B 12px,#1A1A20 12px,#1A1A20 24px);">
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:280px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;background:#1C1C22;">membership.zip</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;background:#1C1C22;">ai-assistant.zip</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;background:#1C1C22;">tender-match.zip</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;border:1px solid rgba(255,255,255,0.12);padding:6px 10px;border-radius:6px;background:#1C1C22;">dashboards.zip</span>
+            </div>
+            <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:54px;color:var(--accent,#E8552D);line-height:1;">20+</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8D93;letter-spacing:0.05em;">first-party plugins · 0 cores touched</div>
+          </div>
+        </article>
+
+        <!-- CS3 Business Center Freetown -->
+        <article data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));box-shadow:0 24px 50px -32px rgba(0,0,0,0.85);">
+          <div style="min-height:300px;background:#141418;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:36px;background-image:radial-gradient(120% 100% at 50% 0%,rgba(232,85,45,0.12),rgba(20,20,24,0) 60%);">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8A8D93;letter-spacing:0.1em;text-transform:uppercase;">Paid acquisition · Freetown, SL</div>
+            <div style="display:flex;gap:28px;flex-wrap:wrap;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:44px;color:var(--accent,#E8552D);line-height:1;">2</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;margin-top:6px;">Meta + Google</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:44px;color:#F4F1EC;line-height:1;">↑</div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;margin-top:6px;">Lead quality</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:flex-end;height:60px;">
+              <span style="width:22px;height:24px;background:rgba(255,255,255,0.12);border-radius:3px;display:block;"></span>
+              <span style="width:22px;height:38px;background:rgba(255,255,255,0.12);border-radius:3px;display:block;"></span>
+              <span style="width:22px;height:52px;background:var(--accent,#E8552D);border-radius:3px;display:block;"></span>
+              <span style="width:22px;height:44px;background:rgba(255,255,255,0.12);border-radius:3px;display:block;"></span>
+            </div>
+          </div>
+          <div style="padding:clamp(28px,3.4vw,44px);">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.14em;color:#8A8D93;text-transform:uppercase;margin-bottom:6px;"># Case Study 03 · Creative + Data</div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;margin:0 0 24px;letter-spacing:-0.01em;">Empower Africa Business Center, Freetown</h3>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The problem</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A new event hall and private-office space in Freetown, Sierra Leone needed bookings — but early ad spend was producing leads that never converted.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">What I built</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">Paid Meta and Google Search campaigns with tailored creative and landing pages, then a clear performance analysis that reframed the real issue as audience match and lead quality — not follow-up — and proposed a lookalike + retargeting pivot.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The result</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">An honest, board-ready read on what the spend actually bought and a concrete strategy to turn qualified attention into bookings.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CS4 London Consult (creative) -->
+        <article data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));box-shadow:0 24px 50px -32px rgba(0,0,0,0.85);">
+          <div style="padding:clamp(28px,3.4vw,44px);order:1;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.14em;color:#8A8D93;text-transform:uppercase;margin-bottom:6px;"># Case Study 04 · Creative</div>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;margin:0 0 24px;letter-spacing:-0.01em;">London Consult — Brand Identity for an Architecture Firm</h3>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The problem</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">London Consult is an up-and-coming architectural firm competing for mid and high-end clients in a crowded market. Their existing logo looked dated and didn't signal the premium, credible studio they wanted to be.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">What I built</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">I benchmarked the identities of leading global architecture firms, then designed a new brand from the ground up: a clean geometric "LC" monogram that reads as premium but stays approachable, a colour system (slate blue and warm tan as primaries, with gold, black and white as supports), Metropolis as the brand typeface, and a full application set — stationery, brand collateral, apparel, and portrait/landscape layout rules.</p>
+              </div>
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.08em;color:var(--accent,#E8552D);text-transform:uppercase;margin-bottom:7px;">The result</div>
+                <p style="font-size:16px;line-height:1.64;color:#BCBEC3;margin:0;">A confident, cohesive identity that lets London Consult look established and trustworthy from the first impression, with a consistent visual language that scales across everything from a business card to a full brand brochure.</p>
+              </div>
+            </div>
+          </div>
+          <div style="order:2;min-height:300px;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,52px);background:linear-gradient(135deg,#2E3849,#222A38);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <div style="width:100%;max-width:340px;background:#F4F1EC;border-radius:16px;padding:clamp(28px,3.4vw,40px);box-shadow:0 26px 50px -22px rgba(0,0,0,0.6);display:flex;flex-direction:column;align-items:center;gap:18px;">
+              <img src="assets/london-consult-logo.png" alt="London Consult logo — tan interlocking monogram with London Consult in slate-blue" style="width:68%;max-width:220px;height:auto;display:block;" />
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8D93;letter-spacing:0.06em;text-transform:uppercase;">Logo &amp; identity system</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SELECTED DESIGN WORK ===================== -->
+  <section id="design-work" style="background:#141418;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,120px) 32px;">
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);max-width:640px;margin-bottom:48px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:var(--accent,#E8552D);font-weight:500;text-transform:uppercase;margin-bottom:14px;"># Selected Design Work</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-0.02em;margin:0 0 14px;">Branding &amp; web, up close.</h2>
+        <p style="font-size:17px;line-height:1.65;color:#8A8D93;margin:0;">Branding and web design projects — a closer look lives on Behance.</p>
+      </div>
+      <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+
+        <a href="https://www.behance.net/gallery/203680621/Urban-Savannah" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);transition:transform .25s,border-color .25s,box-shadow .25s;" style-hover="transform:translateY(-5px);border-color:rgba(232,85,45,0.5);box-shadow:0 30px 56px -26px rgba(0,0,0,0.92)">
+          <div style="height:190px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6E7077;">urban-savannah.jpg</span>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--accent,#E8552D);text-transform:uppercase;">Branding</span>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:0;">Urban Savannah</h3>
+            <p style="font-size:15px;line-height:1.55;color:#9DA0A6;margin:0;flex:1;">Brand identity work blending a modern urban edge with a warm African design language.</p>
+            <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:13.5px;color:var(--accent,#E8552D);margin-top:4px;">View on Behance →</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/193873495/Konzah-Green-Branding" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);transition:transform .25s,border-color .25s,box-shadow .25s;" style-hover="transform:translateY(-5px);border-color:rgba(232,85,45,0.5);box-shadow:0 30px 56px -26px rgba(0,0,0,0.92)">
+          <div style="height:190px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6E7077;">konzah-greens.jpg</span>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--accent,#E8552D);text-transform:uppercase;">Branding</span>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:0;">Konzah Greens</h3>
+            <p style="font-size:15px;line-height:1.55;color:#9DA0A6;margin:0;flex:1;">"A Savannah Swing" — a fresh golf and lifestyle brand identity built on a British Racing Green palette and clean typography.</p>
+            <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:13.5px;color:var(--accent,#E8552D);margin-top:4px;">View on Behance →</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/236612177/Empower-Africa-Website" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);transition:transform .25s,border-color .25s,box-shadow .25s;" style-hover="transform:translateY(-5px);border-color:rgba(232,85,45,0.5);box-shadow:0 30px 56px -26px rgba(0,0,0,0.92)">
+          <div style="height:190px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6E7077;">ea-website.jpg</span>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--accent,#E8552D);text-transform:uppercase;">Web / UI Design</span>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:0;">Empower Africa Website</h3>
+            <p style="font-size:15px;line-height:1.55;color:#9DA0A6;margin:0;flex:1;">Website and UI design for the Empower Africa business platform — the design layer behind the product I also engineer.</p>
+            <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:13.5px;color:var(--accent,#E8552D);margin-top:4px;">View on Behance →</span>
+          </div>
+        </a>
+
+        <a href="https://www.behance.net/gallery/236610785/Gibro-Website-UI-Design" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#26262E;border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;box-shadow:0 20px 44px -30px rgba(0,0,0,0.85);transition:transform .25s,border-color .25s,box-shadow .25s;" style-hover="transform:translateY(-5px);border-color:rgba(232,85,45,0.5);box-shadow:0 30px 56px -26px rgba(0,0,0,0.92)">
+          <div style="height:190px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#1B1B21,#1B1B21 11px,#1F1F26 11px,#1F1F26 22px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.09);">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6E7077;">gibro.jpg</span>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--accent,#E8552D);text-transform:uppercase;">Web / UI Design</span>
+            <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:18px;margin:0;">Gibro</h3>
+            <p style="font-size:15px;line-height:1.55;color:#9DA0A6;margin:0;flex:1;">Website UI design — a clean, modern interface concept.</p>
+            <span style="font-family:'Poppins',sans-serif;font-weight:500;font-size:13.5px;color:var(--accent,#E8552D);margin-top:4px;">View on Behance →</span>
+          </div>
+        </a>
+
+      </div>
+      <div style="text-align:center;margin-top:44px;">
+        <a href="https://www.behance.net/danielomulo" target="_blank" rel="noopener" style="display:inline-block;border:1px solid rgba(255,255,255,0.18);color:#F4F1EC;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;padding:14px 28px;border-radius:10px;transition:border-color .25s,background .25s;" style-hover="border-color:var(--accent,#E8552D);background:rgba(232,85,45,0.08)">See all work on Behance →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" style="border-top:1px solid rgba(255,255,255,0.08);padding:clamp(56px,7vw,88px) 32px;">
+    <div data-reveal="" style="transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);max-width:1200px;margin:0 auto;position:relative;background:var(--accent-soft,#C9512E);border-radius:28px;overflow:hidden;padding:clamp(44px,6vw,80px);">
+      <div aria-hidden="true" style="position:absolute;bottom:-40px;right:-30px;font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(80px,16vw,220px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,0.14);pointer-events:none;">HIRE</div>
+      <div style="position:relative;z-index:2;max-width:720px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.16em;color:rgba(255,255,255,0.85);font-weight:500;text-transform:uppercase;margin-bottom:18px;"># Let's Work Together</div>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-0.025em;margin:0 0 20px;color:#fff;">Let's build something worth shipping.</h2>
+        <p style="font-size:17.5px;line-height:1.6;color:rgba(255,255,255,0.9);margin:0 0 34px;max-width:600px;">Freelance project, full-time role, or a brand that needs a brain behind it — I'm open. Based in Nairobi, working worldwide.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px;">
+          <a href="mailto:danielomulo@gmail.com" style="background:#1C1C22;color:#fff;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;padding:15px 30px;border-radius:10px;transition:transform .2s;" style-hover="transform:translateY(-2px)">Hire Me →</a>
+          <a href="mailto:danielomulo@gmail.com" style="border:1px solid rgba(255,255,255,0.5);color:#fff;text-decoration:none;font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;padding:15px 28px;border-radius:10px;transition:background .25s;" style-hover="background:rgba(255,255,255,0.12)">Email me</a>
+          <div style="display:flex;gap:10px;">
+            <a href="https://github.com/danielomulo-dev" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff;text-decoration:underline;text-underline-offset:4px;">GitHub</a>
+            <a href="https://www.linkedin.com/in/daniel-omulo-43b95679/" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff;text-decoration:underline;text-underline-offset:4px;">LinkedIn</a>
+            <a href="https://www.behance.net/danielomulo" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff;text-decoration:underline;text-underline-offset:4px;">Behance</a>
+          </div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;">
+          <span style="font-weight:500;">danielomulo@gmail.com</span>
+          <span style="opacity:0.6;">·</span>
+          <span>Nairobi · EAT (UTC+3)</span>
+          <span style="opacity:0.6;">·</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block;"></span>Available now</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 32px;display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;">
+      <div style="font-family:'Poppins',sans-serif;font-weight:500;font-size:14.5px;color:#C8C8CE;">Daniel Omulo — Developer &amp; Creative Consultant · Nairobi</div>
+      <div style="display:flex;gap:18px;font-family:'JetBrains Mono',monospace;font-size:13px;">
+        <a href="https://github.com/danielomulo-dev" target="_blank" rel="noopener" style="color:#8A8D93;text-decoration:none;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">GitHub</a>
+        <a href="https://www.linkedin.com/in/daniel-omulo-43b95679/" target="_blank" rel="noopener" style="color:#8A8D93;text-decoration:none;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">LinkedIn</a>
+        <a href="https://www.behance.net/danielomulo" target="_blank" rel="noopener" style="color:#8A8D93;text-decoration:none;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Behance</a>
+        <a href="mailto:danielomulo@gmail.com" style="color:#8A8D93;text-decoration:none;transition:color .2s;" style-hover="color:var(--accent,#E8552D)">Email</a>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6E7077;width:100%;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px;">
+        <span>© 2026 Daniel Omulo</span>
+        <span>Designed &amp; built by Daniel Omulo</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E8552D&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;accentSoft&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C9512E&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+
+  componentDidMount() {
+    this.setupReveal();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.revealOnScroll !== this.props.revealOnScroll) { this.teardownReveal(); this.setupReveal(); }
+  }
+
+  setupReveal() {
+    const reveal = this.props.revealOnScroll ?? true;
+    if (!reveal) return; // base state is already fully visible
+    // Frame-gated: engage the fade only once a real animation frame fires.
+    // In throttled / paused / non-rendering contexts rAF never runs, so nothing
+    // is ever hidden and the page stays completely visible.
+    if (typeof requestAnimationFrame !== 'function') return;
+    requestAnimationFrame(() => {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      const hide = (el) => { el.style.opacity = '0'; el.style.transform = 'translateY(26px)'; };
+      const show = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; };
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      // Above-the-fold (incl. hero) stays visible; only fully off-screen blocks fade in.
+      this._pending = els.filter((el) => el.getBoundingClientRect().top >= vh * 0.95);
+      this._pending.forEach(hide);
+      const check = () => {
+        if (!this._pending) return;
+        const v = window.innerHeight || document.documentElement.clientHeight;
+        for (let i = this._pending.length - 1; i >= 0; i--) {
+          const el = this._pending[i];
+          if (el.getBoundingClientRect().top < v * 0.9) { show(el); this._pending.splice(i, 1); }
+        }
+        if (this._pending.length === 0) this.teardownReveal();
+      };
+      this._onScroll = () => {
+        if (this._throttle) return;
+        this._throttle = true;
+        check();
+        setTimeout(() => { this._throttle = false; }, 80);
+      };
+      window.addEventListener('scroll', this._onScroll, true);
+      window.addEventListener('resize', this._onScroll);
+      check();
+      // Safety net: never leave a block hidden if scroll events don't arrive.
+      this._safety = setTimeout(() => { if (this._pending) this._pending.forEach(show); this.teardownReveal(); }, 3000);
+    });
+  }
+
+  teardownReveal() {
+    if (this._onScroll) {
+      window.removeEventListener('scroll', this._onScroll, true);
+      window.removeEventListener('resize', this._onScroll);
+      this._onScroll = null;
+    }
+  }
+
+  componentWillUnmount() {
+    this.teardownReveal();
+  }
+
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#E8552D',
+      accentSoft: this.props.accentSoft ?? '#C9512E',
+      menuDisplay: this.state.menuOpen ? 'flex' : 'none',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
